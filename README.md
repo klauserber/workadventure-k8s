@@ -10,4 +10,4 @@ Since the original Container images are completely configured via environment va
 
 There are the `commonEnv` and `commonSecretEnv` sections, which are used in all services.
 
-Please the original [Dokumentation](https://github.com/workadventure/workadventure/blob/master/contrib/docker/docker-compose.prod.yaml) for reference.
+Please use the original [Dokumentation](https://github.com/workadventure/workadventure/blob/master/contrib/docker/docker-compose.prod.yaml) for reference.
