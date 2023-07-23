@@ -479,6 +479,10 @@ ingress:
   annotationsPath:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$2
+  annotationsMapstoragePath:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+
   rewritePathSuffix: "(/|$)(.*)"
 
 redis:
