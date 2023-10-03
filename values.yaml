@@ -5,7 +5,6 @@
 appVersion: "v1.17.4"
 domainName: wa.example.com
 ejabberdDomain: ejabberd.example.com
-mapstorageDomain: mapstorage.example.com
 
 secretKey: mySecretKey
 ejabberdJwtSecret: myEjabberdJwtSecret

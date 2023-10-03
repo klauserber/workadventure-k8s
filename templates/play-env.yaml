@@ -12,7 +12,7 @@ data:
   UPLOADER_URL: /uploader
   PUSHER_URL: /
   FRONT_URL: /
-  PUBLIC_MAP_STORAGE_URL: https://{{ .Values.mapstorageDomain }}
+  PUBLIC_MAP_STORAGE_URL: https://{{ .Values.domainName }}/map-storage
   EJABBERD_API_URI: {{ include "workadventure.fullname" . }}-back:{{ .Values.ejabberd.service.port }}
   ENABLE_OPENAPI_ENDPOINT: "true"
   ROOM_API_PORT: "50051"
