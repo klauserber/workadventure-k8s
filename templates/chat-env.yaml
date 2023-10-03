@@ -5,7 +5,6 @@ metadata:
   name: {{ include "workadventure.fullname" . }}-env-chat
   labels:
     {{- include "workadventure.labels" . | nindent 4 }}
-type: Opaque
 data:
   PUSHER_URL: /
   UPLOADER_URL: /uploader
