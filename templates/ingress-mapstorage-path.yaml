@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ $fullName }}-path
+  name: {{ $fullName }}-mapstorage-path
   labels:
     {{- include "workadventure.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotationsMapstoragePath }}
@@ -23,6 +23,7 @@ spec:
   rules:
     - host: {{ .Values.domainName }}
       http:
+        paths:
           - path: /map-storage{{ .Values.ingress.rewritePathSuffix }}
             pathType: {{ .Values.ingress.pathType }}
             backend:
