@@ -279,8 +279,7 @@ uploader:
   affinity: {}
 
   # see configuration reference: https://github.com/workadventure/workadventure/blob/master/contrib/docker/.env.prod.template
-  env:
-    UPLOAD_MAX_FILESIZE: "10485760"
+  env: {}
     # AWS_DEFAULT_REGION:
     # AWS_BUCKET:
     # AWS_URL:
