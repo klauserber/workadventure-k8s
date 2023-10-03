@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-appVersion: "v1.16.3"
+appVersion: "v1.17.4"
 domainName: wa.example.com
 ejabberdDomain: ejabberd.example.com
 mapstorageDomain: mapstorage.example.com
@@ -306,7 +306,7 @@ icon:
     repository: matthiasluedtke/iconserver
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is appVersion.
-    tag: "v3.13.0"
+    tag: "v3.16.0"
 
   podAnnotations: {}
 
