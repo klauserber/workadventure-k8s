@@ -160,9 +160,7 @@ chat:
   affinity: {}
 
   # see configuration reference: https://github.com/workadventure/workadventure/blob/master/contrib/docker/.env.prod.template
-  env:
-    ENABLE_CHAT_UPLOAD: true
-    EJABBERD_DOMAIN: ejabberd.example.com
+  env: {}
 
   secretEnv: {}
 
