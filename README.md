@@ -4,6 +4,11 @@ This Helm chart deploys [Workadventure](https://github.com/workadventure/workadv
 
 It is an adaptation of the [official Docker Compose deployment](https://github.com/workadventure/workadventure/tree/master/contrib/docker).
 
+## Installation
+
+    helm repo add workadventure-k8s https://klauserber.github.io/workadventure-k8s
+    helm install workadventure workadventure-k8s/workadventure
+
 ## Configuration
 
 Since the original Container images are completely configured via environment variables, this Helm chart have to use the same approach. Theres is a corresponding `xxx-secret-env.yaml` file and a `xxx-env.yaml` file, which contains all environments variables. There many pre initialized variables in the template files. Additional entries can be easely added in the corresponding sections of the values file.
