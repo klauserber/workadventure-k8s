@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-appVersion: "v1.17.4"
+appVersion: "v1.17.7"
 domainName: wa.example.com
 ejabberdDomain: ejabberd.example.com
 
