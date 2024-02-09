@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "workadventure.fullname" . }}-back
   labels:
@@ -9,16 +9,24 @@ spec:
   {{- if not .Values.back.autoscaling.enabled }}
   replicas: {{ .Values.back.replicaCount }}
   {{- end }}
+  podManagementPolicy: Parallel
+  updateStrategy:
+    type: RollingUpdate
+    # Back servers are independent, so we can update all at once
+    # See https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#maximum-unavailable-pods
+    maxUnavailable: "100%"
   selector:
     matchLabels:
       {{- include "workadventure.selectorLabels" . | nindent 6 }}
       role: back
   template:
     metadata:
-      {{- with .Values.back.podAnnotations }}
       annotations:
+        checksum/config: {{ (include (print $.Template.BasePath "/back-env.yaml") .) | sha256sum }}
+        checksum/secret: {{ (include (print $.Template.BasePath "/back-secret-env.yaml") .) | sha256sum }}
+        {{- with .Values.back.podAnnotations }}
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- end }}
       labels:
         {{- include "workadventure.selectorLabels" . | nindent 8 }}
         role: back
