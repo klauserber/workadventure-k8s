@@ -15,10 +15,12 @@ spec:
       role: mapstorage
   template:
     metadata:
-      {{- with .Values.mapstorage.podAnnotations }}
       annotations:
+        checksum/config: {{ (include (print $.Template.BasePath "/mapstorage-env.yaml") .) | sha256sum }}
+        checksum/secret: {{ (include (print $.Template.BasePath "/mapstorage-secret-env.yaml") .) | sha256sum }}
+        {{- with .Values.mapstorage.podAnnotations }}
         {{- toYaml . | nindent 8 }}
-      {{- end }}
+        {{- end }}
       labels:
         {{- include "workadventure.selectorLabels" . | nindent 8 }}
         role: mapstorage
